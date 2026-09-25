@@ -2,7 +2,7 @@
   "name": "spark-utils",
   "productName": "Spark Utils",
   "version": "1.0.0",
-  "description": "Standalone helpter tools and maintenance utilities for the makerspace laptops.",
+  "description": "Standalone helper tools and maintenance utilities for the makerspace laptops.",
   "main": "src/main/main.js",
   "scripts": {
     "start": "electron .",
