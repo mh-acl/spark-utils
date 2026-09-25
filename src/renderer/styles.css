@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  flex: none;
+}
+
+/* Scrollable rather than a fixed-height layout, so adding more tools
+   later just means more cards -- this list grows and scrolls instead
+   of needing a bigger window or a layout rework. */
+#tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  flex: none;
+}
+
+.tool-info {
+  min-width: 0;
+}
+
+.tool-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tool-description {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.tool-run-btn {
+  flex: none;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2d6cdf;
+  color: white;
+  cursor: pointer;
+}
+
+.tool-run-btn:hover {
+  background: #2559b8;
+}

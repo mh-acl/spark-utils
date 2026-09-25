@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>USB Wiper</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      box-sizing: border-box;
+      background: #f5f5f5;
+      color: #222;
+    }
+    #status {
+      font-size: 14px;
+      margin-top: 16px;
+      min-height: 18px;
+    }
+    #toggle-button {
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: none;
+      background: #2d6cdf;
+      color: white;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+    #toggle-button.stopping {
+      background: #c0392b;
+    }
+    #progress-bar {
+      width: 100%;
+      height: 10px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    #progress-bar::-webkit-progress-bar {
+      background-color: #e0e0e0;
+      border-radius: 4px;
+    }
+    #progress-bar::-webkit-progress-value {
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      background-color: #2d6cdf;
+    }
+    /* No value attribute = native indeterminate animated fill in Chromium. */
+    #progress-bar.state-disabled::-webkit-progress-value {
+      background-color: #cccccc;
+    }
+    #progress-bar.state-done::-webkit-progress-value {
+      background-color: #2ecc71;
+    }
+    #progress-bar.state-error::-webkit-progress-value {
+      background-color: #c0392b;
+    }
+    #rename-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    #rename-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    #rename-name {
+      flex: 1;
+      font-size: 14px;
+      padding: 5px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #rename-name:disabled {
+      background: #e8e8e8;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggle-button">Begin Wiping USBs</button>
+  <div id="status">Click "Begin Wiping USBs" to start.</div>
+  <progress id="progress-bar" value="0" max="1" class="state-disabled"></progress>
+  <div id="rename-row">
+    <label><input type="checkbox" id="rename-checkbox" />Rename drive to:</label>
+    <input type="text" id="rename-name" value="UNTITLED" />
+  </div>
+  <script src="usbWiperRenderer.js"></script>
+</body>
+</html>

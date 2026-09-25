@@ -1,0 +1,34 @@
+{
+  "name": "spark-utils",
+  "productName": "Spark Utils",
+  "version": "1.0.0",
+  "description": "Standalone helpter tools and maintenance utilities for the makerspace laptops.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.mh-acl.spark-utils",
+    "productName": "Spark Utils",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "zip"
+      ],
+      "category": "public.app-category.utilities"
+    }
+  }
+}
